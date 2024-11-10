@@ -102,6 +102,18 @@ chico sundermann">
                                 class="align-middle">Upload dataset</span>
                         </a>
                     </li>
+                    <li class="sidebar-item {{ 'active' if request.endpoint == 'notepad.create_notepad' else '' }}">
+                        <a class="sidebar-link" href="{{ url_for('notepad.create_notepad') }}">
+                            <i class="align-middle" data-feather="file-text"></i> 
+                            <span class="align-middle"> Notepad</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item {{ 'active' if request.endpoint == 'dashboard.index' else '' }}">
+                        <a class="sidebar-link" href="{{ url_for('dashboard.index') }}">
+                            <i class="align-middle" data-feather="file-text"></i> 
+                            <span class="align-middle"> Dashboard</span>
+                        </a>
+                    </li>
 
                     <li class="sidebar-item {{ 'active' if request.endpoint == 'dataset.list_dataset' else '' }}">
                         <a class="sidebar-link" href="{{ url_for('dataset.list_dataset') }}">
