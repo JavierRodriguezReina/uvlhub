@@ -2,8 +2,8 @@ name: Deploy to Render
 
 on:
     push:
-      tags:
-      - 'v*' 
+      branches:
+      - main
     pull_request:
       branches:
         - main
