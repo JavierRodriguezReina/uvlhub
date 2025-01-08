@@ -51,7 +51,6 @@ jobs:
 
   deploy:
     name: Deploy to Render
-    if: github.event.pull_request.merged == true  # Ejecutar solo si la pull request fue fusionada
     needs: testing
     runs-on: ubuntu-latest
     steps:
