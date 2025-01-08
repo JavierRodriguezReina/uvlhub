@@ -1,18 +1,18 @@
 name: Deploy to Render
 
 on:
-    push:
-      branches:
+  pull_request:
+    types:
+      - closed
+    branches:
       - main
-    pull_request:
-      branches:
-        - main
 
 jobs:
 
   testing:
 
     name: Run Tests
+    if: github.event.pull_request.merged == true  # Ejecutar solo si la pull request fue fusionada
     runs-on: ubuntu-latest
 
     services:
@@ -53,6 +53,7 @@ jobs:
 
   deploy:
     name: Deploy to Render
+    if: github.event.pull_request.merged == true  # Ejecutar solo si la pull request fue fusionada
     needs: testing
     runs-on: ubuntu-latest
     steps:
